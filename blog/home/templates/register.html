@@ -1,0 +1,36 @@
+{% extends "theme.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+    <div class="main-wrapper">
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	    <article class="blog-post px-3 py-5 p-md-5">
+		    <div class="container" style="background-color: gray;">
+				<h1>Create your Account</h1>
+				<hr>
+				<form method="POST">
+				{% csrf_token %}
+                {{ form|crispy }}
+				<button type="submit" class="btn btn-danger">Register</button>
+				</form>
+		    </div><!--//container-->
+	    </article>
+	    
+	    <section class="promo-section theme-bg-light py-5 text-center">
+		    <div class="container">
+			    <h2 class="title">Promo Section Heading</h2>
+			    <p>You can use this section to promote your side projects etc. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. </p>
+                <figure class="promo-figure">
+			        <a href="https://made4dev.com" target="_blank"><img class="img-fluid" src="{% static 'assets/images/promo-banner.jpg' %}" alt="image"></a>
+			    </figure>
+		    </div><!--//container-->
+	    </section><!--//promo-section-->
+
+
+
+
+		{% endblock content %}    
+	  
+
+        
